@@ -1,0 +1,47 @@
+{
+    "cam_num": 6,
+    "login": [
+        {
+            "NAME": "admin",
+            "PASSWD": "shengzhong-rgb01",
+            "IP": "192.168.89.201",
+            "PORT": "8000",
+            "CHANNEL": "1"
+        },
+        {
+            "NAME": "admin",
+            "PASSWD": "shengzhong-rgb02",
+            "IP": "192.168.89.202",
+            "PORT": "8000",
+            "CHANNEL": "1"
+        },
+        {
+            "NAME": "admin",
+            "PASSWD": "shengzhong-rgb03",
+            "IP": "192.168.89.203",
+            "PORT": "8000",
+            "CHANNEL": "1"
+        },
+        {
+            "NAME": "admin",
+            "PASSWD": "shengzhong-rgb04",
+            "IP": "192.168.89.204",
+            "PORT": "8000",
+            "CHANNEL": "1"
+        },
+        {
+            "NAME": "admin",
+            "PASSWD": "shengzhong-rgb01",
+            "IP": "192.168.89.201",
+            "PORT": "8000",
+            "CHANNEL": "1"
+        },
+        {
+            "NAME": "admin",
+            "PASSWD": "shengzhong-rgb01",
+            "IP": "192.168.89.201",
+            "PORT": "8000",
+            "CHANNEL": "1"
+        }
+    ]
+}
