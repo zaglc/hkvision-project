@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 
 class Viewer():
-    def __init__(self, login_config) -> None:
+    def __init__(self, login_config: dict) -> None:
         
         assert (
             "NAME" in login_config and
@@ -20,20 +20,27 @@ class Viewer():
             login_config["CHANNEL"], 
         )
 
-        self._url = f"rtsp://{name}:{passwd}@{ip}/Streaming/Channels/{channel}"
-        self.cam = cv2.VideoCapture(self._url)
+        # self._url = f"rtsp://{name}:{passwd}@{ip}/Streaming/Channels/{channel}"
+        self._url = "ricenoodle.mp4"
         
+    def start_cam(self):
+        self.cam = cv2.VideoCapture(self._url)
+    
     def fetch_frame(self, need_frame = True) -> np.ndarray | None:
+        if not hasattr(self, "cam"):
+            self.start_cam()
+
         if need_frame:
             ret, frame = self.cam.read()
         else:
             ret, frame = self.cam.grab(), None
 
         if not ret:
+            return None
             raise RuntimeError(
                 "frame fetch error"
             )
-        return frame
+        return cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
     
     def reset_cam(self):
         self.cam.release()
