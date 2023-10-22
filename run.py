@@ -26,7 +26,7 @@ def ctrl_Main(camera: Camera, ctrl_pipeObj):
     while True:
         # while ctrl_pipeObj.poll():
         ctrl = out_pipeObj.recv()
-        assert isinstance(ctrl, int), "type error"
+        assert isinstance(ctrl, tuple), "type error"
         camera.controller.handle_ctrl(ctrl)
 
 def camManager_Main(

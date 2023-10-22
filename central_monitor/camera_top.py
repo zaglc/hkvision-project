@@ -16,7 +16,9 @@ class Camera():
         self.viewer = Viewer(
             login_config=login_config,
         )
-        self.controller = Controller()
+        self.controller = Controller(
+            login_config=login_config,
+        )
         
         pass
 

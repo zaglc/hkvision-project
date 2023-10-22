@@ -20,12 +20,12 @@ class Ui_MainWindow(object):
 
         self.num_cam = MainWindow.num_cam
         self.centralwidget = QtWidgets.QWidget(MainWindow)
-        self.centralwidget.setObjectName("centralwidget")
+        self.centralwidget.setObjectName("MonitorZone")
         
         self.videoWin : List[QtWidgets.QLabel] = []
         self.videoLab : List[QtWidgets.QLabel] = []
 
-        pos = generate_pos((1500, 800), self.num_cam)
+        pos = generate_pos((1200, 800), self.num_cam)
         for idx, p in enumerate(pos):
             label = QtWidgets.QLabel(self.centralwidget)
             label.setGeometry(QtCore.QRect(p[0], p[1], p[2], p[3]))

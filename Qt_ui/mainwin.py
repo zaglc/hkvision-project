@@ -2,6 +2,7 @@ import sys, os, numpy as np
 from PyQt5 import QtCore, QtGui, QtWidgets
 from Qt_ui.py.display import Ui_MainWindow as dis_win
 from Qt_ui.threads import QThread4VideoDisplay
+from Qt_ui.ctrl_panel.ctrl_panel import ctrl_panel
 
 from typing import List
 
@@ -13,10 +14,13 @@ class custom_window(QtWidgets.QMainWindow):
         self.num_cam = gpc["num_cam"]
         dis = dis_win()
         dis.setupUi(self)
+        self.ctrl_panel = ctrl_panel(self, gpc["ctrl_pa_conn"][0])
+        self.ctrl_panel.setupUi(self, (1200, 100))
         self.total_signal(gpc)
         self.run_flag = gpc["run_flag"]
         self.pool = gpc["pool"]
         # 退出按钮
+        self.exit_btn: QtWidgets.QPushButton
         self.exit_btn.clicked.connect(self.close_fun)
 
     def total_signal(self, gpc: dict):
